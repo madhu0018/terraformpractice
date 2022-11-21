@@ -3,12 +3,13 @@ pipeline {
      stages 
       stage ('vcs') {
         steps {
-            git branch: 'master',
+            git branch: 'master' ,
              url:'https://github.com/madhu0018/terraformpractice.git'
         }
+      }
         stage ('provisioner')
           steps {
                  sh "terraform apply -var-file='dev.tfvars' -aout -approve"
         }
-      }
-    }
+  }
+    
