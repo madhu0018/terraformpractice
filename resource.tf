@@ -52,7 +52,7 @@ resource "azurerm_public_ip" "ippublicqa" {
   ]
 }
 
-### create network interface
+### create network interface ####
 
 resource "azurerm_network_interface" "nicdev" {
   count               = var.name == "dev" ? var.numberofvms : 0
