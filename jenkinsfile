@@ -10,6 +10,7 @@ pipeline {
         stage ('provisioner') {
 
           steps {
+                 sh "terraform init -reconfigure "
                  sh "terraform apply -var-file='dev.tfvars' -auto-approve"
         }
   }
