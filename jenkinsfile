@@ -7,10 +7,12 @@ pipeline {
              url:'https://github.com/madhu0018/terraformpractice.git'
         }
       }
-        stage ('provisioner')
+        stage ('provisioner') {
+
           steps {
-                 sh "terraform apply -var-file='dev.tfvars' -aout -approve"
+                 sh "terraform apply -var-file='dev.tfvars' -auto-approve"
         }
   }
 
+}
 }
