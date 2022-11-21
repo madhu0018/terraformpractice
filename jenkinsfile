@@ -1,6 +1,6 @@
 pipeline {
     agent any
-     stages 
+     stages {
       stage ('vcs') {
         steps {
             git branch: 'master' ,
@@ -12,4 +12,5 @@ pipeline {
                  sh "terraform apply -var-file='dev.tfvars' -aout -approve"
         }
   }
-    
+
+}
