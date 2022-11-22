@@ -170,7 +170,7 @@ resource "null_resource" "version1" {
       "sudo systemctl start ngserv.service"
 
     ]
-  }
+  
 
   connection {
     type     = "ssh"
@@ -183,5 +183,7 @@ resource "null_resource" "version1" {
   depends_on = [
     azurerm_virtual_machine.vm
   ]
+}
+  
 }
 
