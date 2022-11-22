@@ -180,10 +180,11 @@ resource "null_resource" "version1" {
     # azurerm_public_ip.ippublicdev[count.index].id 
   }
 
+  }
   depends_on = [
     azurerm_virtual_machine.vm
   ]
 }
   
-}
+
 
