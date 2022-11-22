@@ -135,7 +135,7 @@ resource "null_resource" "version1" {
     version = var.null_version
   }
 
-  provisioner "file" {
+ /* provisioner "file" {
     source      = "C:/nb/ngserv.service"
     destination = "/home/madhu/ngserv.service"
     connection {
@@ -146,6 +146,7 @@ resource "null_resource" "version1" {
       #  azurerm_public_ip.ippublicdev[count.index].id
     }
   }
+  */
 
 
   provisioner "remote-exec" {
@@ -160,8 +161,10 @@ resource "null_resource" "version1" {
       "cd angular-realworld-example-app/",
       "sudo npm install -g @angular/cli@8",
       "sudo npm install ",
-      "cd /home/madhu/",
-      "chmod 777 ngserv.service",
+      "pwd",
+      "ll",
+      #"cd /home/madhu/",
+      #"chmod 777 ngserv.service",
       "sudo -i",
       "mv /home/madhu/ngserv.service /etc/systemd/system/ngserv.service",
       "sudo systemctl start ngserv.service"
