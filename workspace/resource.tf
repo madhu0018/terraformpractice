@@ -134,7 +134,7 @@ resource "null_resource" "version1" {
   triggers = {
     version = var.null_version
   }
-
+ # local machine we running provisioner file requrid 
  /* provisioner "file" {
     source      = "C:/nb/ngserv.service"
     destination = "/home/madhu/ngserv.service"
@@ -179,7 +179,7 @@ resource "null_resource" "version1" {
     host     = azurerm_public_ip.ippublicdev[count.index].ip_address
     # azurerm_public_ip.ippublicdev[count.index].id 
   }
-
+  
   }
   depends_on = [
     azurerm_virtual_machine.vm
